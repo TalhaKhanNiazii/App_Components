@@ -20,10 +20,12 @@ const App = () => {
             speed={1.5}
             style={styles.animation}
           />
-          <Button
-            title={isPlaying ? 'Pause Animation' : 'Play Animation'}
-            onPress={toggleAnimation}
-          />
+          <View style={styles.btnStyle}>
+            <Button
+              title={isPlaying ? 'Pause Animation' : 'Play Animation'}
+              onPress={toggleAnimation}
+            />
+          </View>
         </>
       ) : (
         <View style={styles.container}>
@@ -49,9 +51,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 20,
   },
+  btnStyle: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    justifyContent: 'flex-end',
+    bottom: 20,
+    width: '60%',
+    alignSelf: 'center',
+  },
   animation: {
     flex: 1,
-    zIndex: 1,
     backgroundColor: 'rgba(0,0,0,0.1)',
     // width: 200,
     // height: 200,

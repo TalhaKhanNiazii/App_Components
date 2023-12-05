@@ -7,10 +7,10 @@ import {
   Alert,
   TouchableOpacity,
 } from 'react-native';
-import PrimaryButton from '../Components/PrimaryButton';
-import TextInputComponent from '../Components/TextInputComponent';
+import PrimaryButton from '../../Components/PrimaryButton';
+import TextInputComponent from '../../Components/TextInputComponent';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Colors from '../Themes/Colors';
+import Colors from '../../Themes/Colors';
 
 const Home = () => {
   const [show, setShow] = useState(false);
@@ -32,7 +32,7 @@ const Home = () => {
         // source={{
         //   uri: 'https://marketplace.canva.com/EAFXS8-cvyQ/1/0/1600w/canva-brown-and-light-brown%2C-circle-framed-instagram-profile-picture-2PE9qJLmPac.jpg',
         // }}
-        source={require('../Assets/images/profile.png')}
+        source={require('../../Assets/images/profile.png')}
       />
       {/* {data.map((items, index) => {
         return (

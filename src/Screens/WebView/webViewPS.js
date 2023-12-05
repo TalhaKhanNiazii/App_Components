@@ -16,7 +16,7 @@ const webViewPS = () => {
       <StatusBar backgroundColor={'orange'} barStyle={'dark-content'} />
       <WebView
         style={Styles.webView}
-        ref={webView}
+        // ref={webView}
         source={{uri: 'https://reactnative.dev/'}}
       />
       <View style={Styles.footer}>

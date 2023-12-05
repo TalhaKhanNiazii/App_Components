@@ -16,7 +16,7 @@ const App = () => {
           style={Styles.lottieView}
           autoPlay={showLoader}
           loop
-          source={require('../../../Assets/Loader/Animation - 1699464281054.json')}
+          source={require('../../../Assets/Loader/Animation - 1699616461319.json')}
         />
       ) : (
         <View style={Styles.mainContainer}>
@@ -36,7 +36,7 @@ const Styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'white',
   },
-  lottieView: {flex: 1, backgroundColor: 'rgba(0, 0, 0,0.1)', zIndex: 1},
+  lottieView: {flex: 1, backgroundColor: 'rgba(0, 0, 0,0.1)'},
   text: {
     fontSize: 36,
     color: 'black',

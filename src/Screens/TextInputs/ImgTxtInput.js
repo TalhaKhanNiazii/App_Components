@@ -144,12 +144,12 @@ import {
   Keyboard,
   ScrollView,
 } from 'react-native';
-import PrimaryButton from '../Components/PrimaryButton';
-import TextInputComponent from '../Components/TextInputComponent';
+import PrimaryButton from '../../Components/PrimaryButton';
+import TextInputComponent from '../../Components/TextInputComponent';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Colors from '../Themes/Colors';
+import Colors from '../../Themes/Colors';
 
-const Login = () => {
+const App = () => {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -177,7 +177,7 @@ const Login = () => {
                 <Image
                   style={Styles.image}
                   resizeMode="center"
-                  source={require('../Assets/images/profile.png')}
+                  source={require('../../Assets/images/profile.png')}
                 />
                 <View style={Styles.txtInputView}>
                   <TextInputComponent
@@ -272,4 +272,4 @@ const Styles = StyleSheet.create({
   txtInputView: {width: '90%', marginTop: 20},
 });
 
-export default Login;
+export default App;

@@ -3,7 +3,10 @@
  */
 
 import {AppRegistry} from 'react-native';
-import Login from './src/Screens/LoginScreen';
+
+import TextInputPractice from './src/Screens/TextInputs/TextInput';
+import Password from './src/Screens/TextInputs/PasswordInput';
+import TxtInputImg from './src/Screens/TextInputs/ImgTxtInput';
 import Slider from './src/Screens/Slider/Slider';
 import Slider2 from './src/Screens/Slider/Slider2';
 import PickerExample from './src/Screens/Picker/PickerPS';
@@ -19,9 +22,16 @@ import DateTimePS from './src/Screens/DateTimePicker/DateTimePS';
 import CardsPS from './src/Screens/Cards/CardsPS';
 import MainScreen from './src/Screens/Cards/MainScreen';
 import webViewPS from './src/Screens/WebView/webViewPS';
-import App from './src/Screens/Loader/ActivityIndicator';
+import Loader from './src/Screens/Loader/Loader';
 import LoaderPS from './src/Screens/Loader/AnimatedLottie/LoaderPS';
 import LoaderPS2 from './src/Screens/Loader/AnimatedLottie/LoaderPS2';
+import ProgressStepsPS from './src/Screens/ProgressSteps/ProgressStepsPS';
+import BackgroundChanger from './src/Screens/BackgroundChanger/BackgroundChanger';
+import BGuseEffect from './src/Screens/BackgroundChanger/BGuseEffect';
+import RandomDice from './src/Screens/Dice/RandomDice';
+import CurrencyChanger from './src/Screens/CurrencyChanger/CurrencyChanger';
+import TicTacToe from './src/Screens/TikTacToe/TicTacToe';
+import MyFlatList from './src/Screens/FlatList/MyFlatList';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => LoaderPS2);
+AppRegistry.registerComponent(appName, () => MyFlatList);

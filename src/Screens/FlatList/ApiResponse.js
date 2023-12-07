@@ -25,7 +25,11 @@ const ApiReponse = () => {
 
   const renderListItem = ({item}) => (
     <View style={{padding: 16}}>
-      <Text>{item.title}</Text>
+      <Text
+        style={{fontSize: 22, fontFamily: 'OpenSans-Medium', color: 'black'}}>
+        {item.title}
+      </Text>
+      <Text>{item.body}</Text>
     </View>
   );
 

@@ -1,0 +1,197 @@
+[
+    {
+      "id": 1,
+      "title": "Premium Leather Jacket",
+      "description": "Stay stylish and warm with this premium leather jacket. Crafted from genuine leather, it's the perfect addition to your wardrobe.",
+      "imageUri": "https://esteemleatherwears.com/wp-content/uploads/2021/02/2-600x600.jpg",
+      "price": 199.99,
+      "ratings": 4.9
+    },
+    {
+      "id": 2,
+      "title": "Artisanal Ceramic Dinner Set",
+      "description": "Elevate your dining experience with this handcrafted ceramic dinner set. Each piece is a work of art, perfect for special occasions.",
+      "imageUri": "https://i.pinimg.com/originals/9e/b9/e6/9eb9e668eced6c0addd22a0f3cb25974.jpg",
+      "price": 149.99,
+      "ratings": 4.7
+    },
+    {
+      "id": 3,
+      "title": "Smart Home Security System",
+      "description": "Keep your home secure with this state-of-the-art smart security system. Monitor and control access from anywhere with ease.",
+      "imageUri": "https://mydome.co.uk/wp-content/uploads/2021/11/DWS-I-hero_wifi_edited-1-300x300.jpg",
+      "price": 299.99,
+      "ratings": 4.8
+    },
+    {
+      "id": 4,
+      "title": "Luxury Fountain Pen",
+      "description": "Make a statement with this elegant luxury fountain pen. Designed for a smooth writing experience, it's a symbol of sophistication.",
+      "imageUri": "https://m.media-amazon.com/images/I/41CAxj5FsxL._SL500_.jpg",
+      "price": 79.99,
+      "ratings": 4.6
+    },
+    {
+      "id": 5,
+      "title": "Wireless Noise-Canceling Headphones",
+      "description": "Immerse yourself in music with these wireless noise-canceling headphones. Experience crystal-clear sound and comfort on the go.",
+      "imageUri": "https://www.laraibnow.com/images/product_gallery/1646498708_1000xm4-sony-black-square.jpg",
+      "price": 129.99,
+      "ratings": 4.5
+    },
+    {
+      "id": 6,
+      "title": "Classic Men's Suit",
+      "description": "Look sharp and sophisticated in this classic men's suit. Perfect for formal occasions, this suit exudes timeless style.",
+      "imageUri": "https://m.media-amazon.com/images/I/51tNXvXh3TL.jpg",
+      "price": 249.99,
+      "ratings": 4.8
+    },
+    {
+      "id": 7,
+      "title": "Vintage Polaroid Camera",
+      "description": "Capture memories in style with this vintage Polaroid camera. Rediscover the joy of instant photography with a retro touch.",
+      "imageUri": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61ze3VKm8sL.jpg",
+      "price": 89.99,
+      "ratings": 4.7
+    },
+    {
+      "id": 8,
+      "title": "Gourmet Chocolate Assortment",
+      "description": "Indulge your senses with this gourmet chocolate assortment. A delightful blend of flavors for the chocolate connoisseur.",
+      "imageUri": "https://www.puyricard.fr/3733-large_default/fluo-square-box-of-chocolates-300-g.jpg",
+      "price": 39.99,
+      "ratings": 4.9
+    },
+    {
+      "id": 9,
+      "title": "Fitness Tracker Watch",
+      "description": "Achieve your fitness goals with this advanced fitness tracker watch. Monitor your activities and stay motivated on your journey.",
+      "imageUri": "https://school2office.com/cdn/shop/products/smart_watch_7_cw7_clock_175_inch_square_screen_bt_call_ip67_waterproof_heart_rate_monitor_fitness_tracker1631795012.jpg?v=1650715674",
+      "price": 59.99,
+      "ratings": 4.6
+    },
+    {
+      "id": 10,
+      "title": "Professional Chef's Knife Set",
+      "description": "Upgrade your kitchen with this professional chef's knife set. Precision and durability for the discerning home chef.",
+      "imageUri": "https://cdn.myshoptet.com/usr/www.kulina.com/user/shop/big/254749_knife-set-twin-gourmet--3-pcs--zwilling.jpg?63414fb1",
+      "price": 149.99,
+      "ratings": 4.8
+    },
+    {
+      "id": 11,
+      "title": "Cozy Cashmere Sweater",
+      "description": "Wrap yourself in luxury with this cozy cashmere sweater. Soft, warm, and stylish for the ultimate comfort.",
+      "imageUri": "https://welcomeobjects.com/wp-content/uploads/2017/12/Everlane-Waffle-Knit-Cashmere-Square-Gray.jpg",
+      "price": 129.99,
+      "ratings": 4.7
+    },
+    {
+      "id": 12,
+      "title": "Sleek Stainless Steel Water Bottle",
+      "description": "Stay hydrated in style with this sleek stainless steel water bottle. Durable and eco-friendly for your active lifestyle.",
+      "imageUri": "https://m.media-amazon.com/images/I/71lDc2e5nzL._AC_UF350,350_QL80_.jpg",
+      "price": 19.99,
+      "ratings": 4.5
+    },
+    {
+      "id": 13,
+      "title": "Artistic Wall Clock",
+      "description": "Adorn your walls with this artistic wall clock. A fusion of style and functionality, it's a conversation starter in any room.",
+      "imageUri": "https://media.istockphoto.com/id/930861490/vector/clock-square-shaped-clock.jpg?s=612x612&w=0&k=20&c=2_bTQP7UEqZkYTINxgUdPhG1Cs9o74BRCxxVsX8KKrA=",
+      "price": 49.99,
+      "ratings": 4.6
+    },
+    {
+      "id": 14,
+      "title": "Compact Espresso Machine",
+      "description": "Enjoy the perfect cup of espresso with this compact espresso machine. Sleek design and barista-quality results at your fingertips.",
+      "imageUri": "https://m.media-amazon.com/images/I/61OzryUpuKL.jpg",
+      "price": 79.99,
+      "ratings": 4.9
+    },
+    {
+      "id": 15,
+      "title": "Rustic Wood Bookshelf",
+      "description": "Add character to your space with this rustic wood bookshelf. A blend of form and function, perfect for displaying your favorite reads.",
+      "imageUri": "https://i.etsystatic.com/8552523/r/il/0f712c/2357246096/il_570xN.2357246096_nhts.jpg",
+      "price": 149.99,
+      "ratings": 4.7
+    },
+    {
+      "id": 16,
+      "title": "Aromatherapy Diffuser",
+      "description": "Create a soothing atmosphere with this aromatherapy diffuser. Elegant design and calming scents for a relaxing home environment.",
+      "imageUri": "https://casefactorie.com/cdn/shop/products/ZO7A8A_1.jpg?v=1647838516&width=1445",
+      "price": 29.99,
+      "ratings": 4.8
+    },
+    {
+      "id": 17,
+      "title": "Professional Makeup Brush Set",
+      "description": "Achieve flawless makeup with this professional makeup brush set. High-quality bristles for precision and a flawless finish.",
+      "imageUri": "https://realtechniques.com/cdn/shop/files/1533_RT_FlawlessBaseSet_OOP_Front_300dpiRGB_1024x1024.jpg?v=1683302540",
+      "price": 34.99,
+      "ratings": 4.6
+    },
+    {
+      "id": 18,
+      "title": "Modern Office Desk",
+      "description": "Elevate your workspace with this modern office desk. Sleek design and ample storage for a productive and stylish work environment.",
+      "imageUri": "https://www.appliancesonline.com.au/ak/0/5/0/1/05011a1568448e36f0516f386e5ca4d571fa3080_JasonL_1400mm_Quadro_Square_Leg_Desk_White_QDS1407WWT_high-high.jpeg",
+      "price": 199.99,
+      "ratings": 4.7
+    },
+    {
+        "id": 19,
+        "title": "Smart Home Security Camera",
+        "description": "Keep an eye on your home with this smart security camera. HD video quality and real-time monitoring for peace of mind.",
+        "imageUri": "https://media.screwfix.com/is/image/ae235/223PG_P?$fxSharpen$=&wid=257&hei=257&dpr=on",
+        "price": 79.99,
+        "ratings": 4.4
+      },
+      
+      {
+        "id": 20,
+        "title": "Portable Bluetooth Speaker",
+        "description": "Take your music anywhere with this portable Bluetooth speaker. Powerful sound and stylish design for on-the-go entertainment.",
+        "imageUri": "https://www.fye.com/dw/image/v2/BBNF_PRD/on/demandware.static/-/Sites-fye-master/default/dw74016a90/ea3/ea3aca/ea3aca8a-ff3f-4b21-88a7-dd9f56b02eb8.jpeg?sw=1000",
+        "price": 49.99,
+        "ratings": 4.5
+      },
+      {
+        "id": 21,
+        "title": "Elegant Crystal Wine Glasses",
+        "description": "Enhance your dining experience with these elegant crystal wine glasses. Perfect for toasting to special moments.",
+        "imageUri": "https://m.media-amazon.com/images/I/712cJb7BuFL._AC_UF894,1000_QL80_.jpg",
+        "price": 29.99,
+        "ratings": 4.8
+      },
+      {
+        "id": 22,
+        "title": "Stylish Laptop Backpack",
+        "description": "Carry your essentials in style with this stylish laptop backpack. Functional design and durable materials for the modern commuter.",
+        "imageUri": "https://i.pinimg.com/originals/2b/2e/de/2b2ede09a4ce96e0c400c18e8ec4aafe.jpg",
+        "price": 39.99,
+        "ratings": 4.7
+      },
+      {
+        "id": 23,
+        "title": "Premium Yoga Mat",
+        "description": "Elevate your yoga practice with this premium yoga mat. Non-slip surface and extra cushioning for a comfortable and focused session.",
+        "imageUri": "https://cdn.mall.adeptmind.ai/https%3A%2F%2Fimage.s5a.com%2Fis%2Fimage%2FTheBay%2F620584667880_main%3Fwid%3D1200%26hei%3D1200%26qlt%3D90%26resMode%3Dsharp2%26op_usm%3D0.9%2C1.0%2C8%2C0_large.webp",
+        "price": 24.99,
+        "ratings": 4.6
+      },
+      {
+        "id": 24,
+        "title": "Outdoor Hammock Swing",
+        "description": "Relax in nature with this outdoor hammock swing. Durable and comfortable for the perfect lazy afternoon in your backyard.",
+        "imageUri": "https://cdn.mall.adeptmind.ai/https%3A%2F%2Fimage.s5a.com%2Fis%2Fimage%2FTheBay%2F15694570dd91441e9f10e35bec42e815%3Fwid%3D1200%26hei%3D1200%26qlt%3D90%26resMode%3Dsharp2%26op_usm%3D0.9%2C1.0%2C8%2C0_large.webp",
+        "price": 69.99,
+        "ratings": 4.9
+      }
+    ]
+    
+      

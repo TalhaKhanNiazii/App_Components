@@ -1,44 +1,87 @@
-import {View, Text, TextInput, StyleSheet, Button} from 'react-native';
-import React, {useRef} from 'react';
+import React, {useState, useRef } from 'react';
+import { View, TextInput, TouchableOpacity, Keyboard, StyleSheet } from 'react-native';
 
-const App = () => {
-  const input = useRef();
-  const handleClick = () => {
-    input.current.focus();
-    input.current.setNativeProps({
-      fontSize: 22,
-      color: 'yellow',
-    });
+const MyComponent = () => {
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('');
+
+  const input1Ref = useRef(null);
+  const input2Ref = useRef(null);
+
+  const handleFocus = (inputRef) => {
+    // Change props when the input gains focus
+    if (inputRef.current) {
+      inputRef.current.setNativeProps({
+        placeholderTextColor:'blue',
+        style: { borderColor: 'blue', color:'blue', 
+        fontWeight:'bold', height:50, fontSize:22 },
+      });
+    }
   };
+
+  const handleBlur = (inputRef) => {
+    // Change props when the input loses focus
+    if (inputRef.current) {
+      inputRef.current.setNativeProps({
+        placeholderTextColor:'black',
+        style: { borderColor: 'black', color:'black', 
+        fontWeight:'500', height:45, fontSize:18  },
+      });
+    }
+  };
+
+  const handleScreenPress = () => {
+    // Hide the keyboard when clicking randomly on the screen
+    Keyboard.dismiss();
+  };
+
   return (
-    <View style={Styles.mainContainer}>
-      <Text style={Styles.mainText}>Use Ref Practice</Text>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={handleScreenPress}
+      activeOpacity={1} // To prevent the TouchableOpacity's default opacity effect
+    >
       <TextInput
-        ref={input}
-        style={Styles.txtInput}
-        placeholder="Enter your name"
+        ref={input1Ref}
+        onFocus={() => handleFocus(input1Ref)}
+        onBlur={() => handleBlur(input1Ref)}
+        style={styles.input}
+        value={input1}
+        onChangeText={(txt)=> setInput1(txt)}
+        placeholder="Type here..."
+        placeholderTextColor={'black'}
       />
       <TextInput
-        style={Styles.txtInput}
-        placeholder="Enter your phone number"
+        ref={input2Ref}
+        onFocus={() => handleFocus(input2Ref)}
+        onBlur={() => handleBlur(input2Ref)}
+        style={styles.input}
+        value={input2}
+        onChangeText={(txt)=> setInput2(txt)}
+        placeholder="Another input..."
+        placeholderTextColor={'black'}
       />
-      <View style={Styles.btn}>
-        <Button onPress={handleClick} title="Click" />
-      </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
-export default App;
-
-const Styles = StyleSheet.create({
-  mainContainer: {flex: 1, padding: 10},
-  mainText: {alignSelf: 'center', fontSize: 26, textAlign: 'center'},
-  txtInput: {
-    borderWidth: 1,
-    borderColor: 'white',
-    paddingLeft: 10,
-    marginTop: 20,
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'tan'
   },
-  btn: {width: '60%', alignSelf: 'center', marginTop: 30},
+  input: {
+    height: 45,
+    fontSize:18,
+    width:'90%',
+    borderColor: 'black',
+    color:'black',
+    borderWidth: 2,
+    marginVertical: 5,
+    paddingHorizontal: 15,
+  },
 });
+
+export default MyComponent;

@@ -1,7 +1,7 @@
 // HomeScreen.js
 
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, StyleSheet} from 'react-native';
 import {useTheme} from './useContext';
 
 const HomeScreen = () => {
@@ -10,12 +10,10 @@ const HomeScreen = () => {
   return (
     <View
       style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        ...styles.mainContainer,
         backgroundColor: isDarkTheme ? 'black' : 'white',
       }}>
-      <Text style={{color: isDarkTheme ? 'white' : 'black'}}>
+      <Text style={{...styles.text, color: isDarkTheme ? 'white' : 'black'}}>
         {isDarkTheme ? 'Dark Theme' : 'Light Theme'}
       </Text>
       <Button title="Toggle Theme" onPress={toggleTheme} />
@@ -24,3 +22,10 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
+
+const styles = StyleSheet.create({
+  mainContainer:{flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center'},
+  text:{marginBottom:20, fontSize:22},
+})

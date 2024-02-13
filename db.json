@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "dae9",
+      "name": "Talha",
+      "email": "tkn@gmail.com",
+      "password": "tkn123"
+    },
+    {
+      "id": "dj44",
+      "name": "Ahmed",
+      "email": "tkn@gmail.com",
+      "password": "tkn123"
+    },
+    {
+      "name": "Asad Mohmand",
+      "email": "asdn@gmail.com",
+      "password": "tkn1as",
+      "id": "jfj4"
+    }
+  ],
+  "products": [
+    {
+      "id": "12390b",
+      "name": "Apple"
+    },
+    {
+      "id": "6dsaf24",
+      "name": "Samsung"
+    }
+  ]
+}

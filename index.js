@@ -31,7 +31,21 @@ import BGuseEffect from './src/Screens/BackgroundChanger/BGuseEffect';
 import RandomDice from './src/Screens/Dice/RandomDice';
 import CurrencyChanger from './src/Screens/CurrencyChanger/CurrencyChanger';
 import TicTacToe from './src/Screens/TikTacToe/TicTacToe';
-import MyFlatList from './src/Screens/FlatList/MyFlatList';
+import MyProductList from './src/Screens/FlatList/MyProductList';
+import MyStack from './src/Navigation/StackNavigation';
+import MyBottomTab from './src/Navigation/BottomTab';
+import useref from './src/Screens/Hooks/useRef';
+import useMemo from './src/Screens/Hooks/useMemo';
+import CallBackScreen from './src/Screens/Hooks/useCallback/CallBackScreen';
+import useContextApp from './src/Screens/Hooks/useContext/useContextApp';
+import MyReducer from './src/Screens/Hooks/useReducer/useReducer';
+import Home from './src/Screens/Hooks/HooksApp/Home';
+import PS1 from './src/Screens/API/PS1';
+import PS2 from './src/Screens/API/PS2';
+import PS3 from './src/Screens/API/PS3';
+import PS4 from './src/Screens/API/PS4';
+import PS5 from './src/Screens/API/PS5';
+
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => MyFlatList);
+AppRegistry.registerComponent(appName, () => PS5);

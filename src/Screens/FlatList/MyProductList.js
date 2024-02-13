@@ -16,13 +16,19 @@ import productsData from '../../json/Products.json';
 import Icon from 'react-native-vector-icons/Entypo';
 import Icon2 from 'react-native-vector-icons/Feather';
 import Icon3 from 'react-native-vector-icons/FontAwesome6';
+import {useNavigation} from '@react-navigation/native';
+// import CheckBox from '@react-native-community/checkbox';
+import {Checkbox} from 'react-native-paper';
 
-const MyFlatList = () => {
+const MyProductList = () => {
+  const navigation = useNavigation();
+
   const [data, setData] = useState(productsData);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   const ITEMS_PER_PAGE = 6;
   let startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -38,6 +44,52 @@ const MyFlatList = () => {
     }
   };
   const flatListRef = useRef();
+
+  const handleOnClick = ind => {
+    let temp = productsData;
+    temp.map((item, index) => {
+      if (index == ind) {
+        item.checked = !item.checked;
+      }
+      let tempData = [];
+      temp.map(item => {
+        tempData.push(item);
+      });
+      setData(tempData);
+    });
+  };
+  const handleOnClear = () => {
+    let temp = productsData;
+    temp.map((item, index) => {
+      item.checked = false;
+      let tempData = [];
+      temp.map(item => {
+        tempData.push(item);
+      });
+      setData(tempData);
+    });
+  };
+  const handleOnSelectAll = () => {
+    let temp = productsData;
+    temp.map(item => {
+      item.checked = true;
+      let tempData = [];
+      temp.map(item => {
+        tempData.push(item);
+      });
+      setData(tempData);
+    });
+  };
+  const handleCountSelection = () => {
+    let temp = productsData;
+      let tempData = [];
+      temp.map(item => {
+        if(item.checked){
+          tempData.push(item)
+        }
+      });
+      return tempData.length;
+  };
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.mainText}>My Products FlatList</Text>
@@ -50,7 +102,7 @@ const MyFlatList = () => {
             value={search}
             onChangeText={txt => setSearch(txt)}
             style={styles.searchInput}
-            placeholder="Search food here .."
+            placeholder="Search product here .."
           />
           {search && (
             <TouchableOpacity
@@ -58,7 +110,7 @@ const MyFlatList = () => {
               style={styles.crossIcon}
               onPress={() => {
                 setSearch('');
-                setData(fruitsData);
+                setData(data);
               }}>
               <Icon color={'black'} name="cross" size={32} />
             </TouchableOpacity>
@@ -70,6 +122,20 @@ const MyFlatList = () => {
           <Icon3 name="sliders" color={'black'} size={30} />
         </TouchableOpacity>
       </View>
+      {checked && (
+        <View style={styles.selectionView}>
+          <TouchableOpacity onPress={()=> {
+            handleOnClear()
+            setChecked(false)
+            }} activeOpacity={0.7}>
+            <Icon name="cross" size={50} color={'red'} />
+          </TouchableOpacity>
+          <Text style={{fontSize:18, color:'black'}}>{`Item's Selected (${handleCountSelection()})`}</Text>
+          <TouchableOpacity onPress={()=> handleOnSelectAll()} activeOpacity={0.7} style={styles.selectAllBtn}>
+            <Text style={styles.selectAllText}>Select All</Text>
+          </TouchableOpacity>
+        </View>
+      )}
       <FlatList
         ref={flatListRef}
         style={styles.flatList}
@@ -96,11 +162,27 @@ const MyFlatList = () => {
         }
         renderItem={({item, index}) => (
           <TouchableOpacity
-            disabled={true}
-            onPress={() => Alert.alert(item.title, item.details)}
+            disabled={false}
+            onPress={() =>
+              navigation.navigate('MyProductDetails', {product: item})
+            }
+            onLongPress={() => {
+              setChecked(!checked);
+              handleOnClear();
+            }}
+            // onPress={() => Alert.alert(item.title, item.description)}
             key={index}
             activeOpacity={0.7}
             style={styles.card}>
+            {checked && (
+              <View style={styles.checkView}>
+                <Checkbox
+                  status={item.checked ? 'checked' : 'unchecked'}
+                  onPress={() => handleOnClick(index)}
+                  color="#21aaff"
+                />
+              </View>
+            )}
             <View style={styles.cardInsideView1}>
               <Text numberOfLines={1} style={styles.cardTitle}>
                 {item.title}
@@ -125,10 +207,17 @@ const MyFlatList = () => {
         animationType="slide"
         transparent={true}
         visible={showModal}
-        hardwareAccelerated={true}
+        // hardwareAccelerated={true}
         onRequestClose={() => setShowModal(!showModal)}>
         <View style={styles.modalMainView}>
           <View style={styles.modalView}>
+            <Icon
+              onPress={() => setShowModal(!showModal)}
+              style={styles.modalIcon}
+              color={'black'}
+              name="cross"
+              size={32}
+            />
             <TouchableOpacity
               onPress={() => {
                 setShowModal(!showModal);
@@ -136,6 +225,7 @@ const MyFlatList = () => {
                   a.title.localeCompare(b.title),
                 );
                 setData(tempList);
+                flatListRef.current.scrollToIndex({animated: true, index: 0});
               }}
               activeOpacity={0.7}
               style={styles.modalBtn}>
@@ -146,6 +236,7 @@ const MyFlatList = () => {
                 setShowModal(!showModal);
                 let tempList = data.sort((a, b) => a.price - b.price);
                 setData(tempList);
+                flatListRef.current.scrollToIndex({animated: true, index: 0});
               }}
               activeOpacity={0.7}
               style={styles.modalBtn}>
@@ -156,6 +247,7 @@ const MyFlatList = () => {
                 setShowModal(!showModal);
                 let tempList = data.sort((a, b) => b.price - a.price);
                 setData(tempList);
+                flatListRef.current.scrollToIndex({animated: true, index: 0});
               }}
               activeOpacity={0.7}
               style={styles.modalBtn}>
@@ -166,6 +258,7 @@ const MyFlatList = () => {
                 setShowModal(!showModal);
                 let tempList = data.sort((a, b) => b.ratings - a.ratings);
                 setData(tempList);
+                flatListRef.current.scrollToIndex({animated: true, index: 0});
               }}
               activeOpacity={0.7}
               style={styles.modalBtn}>
@@ -178,10 +271,10 @@ const MyFlatList = () => {
   );
 };
 
-export default MyFlatList;
+export default MyProductList;
 
 const styles = StyleSheet.create({
-  mainContainer: {flex: 1, alignItems: 'center'},
+  mainContainer: {flex: 1, alignItems: 'center', backgroundColor: '#e0ecff'},
   mainText: {
     fontSize: 22,
     fontFamily: 'PlaypenSans-Regular',
@@ -267,6 +360,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingLeft: 50,
     paddingRight: 50,
+    color:'black'
   },
   crossIcon: {position: 'absolute', right: 10},
   searchIcon: {position: 'absolute', left: 10},
@@ -281,6 +375,14 @@ const styles = StyleSheet.create({
     top: '25%',
     alignItems: 'center',
     justifyContent: 'space-evenly',
+  },
+  modalIcon: {
+    backgroundColor: 'skyblue',
+    borderRadius: 50,
+    position: 'absolute',
+    zIndex: 1,
+    right: -10,
+    top: -10,
   },
   modalBtn: {
     flex: 0.15,
@@ -298,5 +400,30 @@ const styles = StyleSheet.create({
     color: '#009dff',
     fontWeight: 'bold',
     fontSize: 24,
+  },
+  checkView: {top: -16, right: 0, position: 'absolute'},
+  selectionView: {
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    // backgroundColor: 'pink',
+    height: 50,
+    width: '90%',
+    marginBottom: 10,
+    flexDirection: 'row',
+  },
+  selectAllBtn: {
+    height: 40,
+    width: '35%',
+    backgroundColor: '#21aaff',
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 10,
+  },
+  selectAllText: {
+    fontSize: 18,
+    color: 'white',
+    fontFamily: 'PlaypenSans-Medium',
   },
 });

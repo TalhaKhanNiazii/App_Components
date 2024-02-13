@@ -1,42 +1,44 @@
-import {View, Text, TextInput, StyleSheet, Button} from 'react-native';
-import React, {useMemo} from 'react';
-import {useState} from 'react';
+import React, {useState, useMemo} from 'react';
+import {View, Text, Button, StyleSheet} from 'react-native';
 
-const App = () => {
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
-  const addNumber = x => {
-    console.log('Function Called ..');
-    return x + 2;
+const MyComponent = () => {
+  const [count, setCount] = useState(0);
+  const [num, setNum] = useState(0);
+
+  // Example of using useMemo to memoize the result of a computation
+  const squaredValue = useMemo(() => {
+    console.log('Computing squared value...');
+    return count * count;
+  }, [count]);
+  // The dependency array: recompute if 'count' changes
+
+  const sum = (x) => {
+    console.log('The Sum of num + x is : ', num + x);
   };
-  const num = useMemo(() => addNumber(count1), [count1]);
-  //Here we used useMemo just to ignore calling the function again and again and at the end we passed dependency [count1], which means that when the state variable changes then call or render the function other wise don't call it.
+  useMemo(()=> {sum(10)},[num])
+
   return (
     <View style={Styles.mainContainer}>
-      <Text
-        style={{
-          ...Styles.mainText,
-          color: 'black',
-          backgroundColor: 'orange',
-          padding: 10,
-          borderRadius: 10,
-        }}>
-        Use Memo
-      </Text>
-      <Text style={{...Styles.mainText, fontSize: 60, color: 'green'}}>
-        {num}
-      </Text>
-      <Text style={Styles.mainText} onPress={() => setCount1(count1 + 1)}>
-        Count 1 : {count1}
-      </Text>
-      <Text style={Styles.mainText} onPress={() => setCount2(count2 + 1)}>
-        Count 2 : {count2}
-      </Text>
+      <Text style={{fontSize:28, margin:10}}>Count: {count}</Text>
+      <Text style={{fontSize:28, margin:10}}>Squared Value: {squaredValue}</Text>
+      <Button
+        title="Increment Count"
+        onPress={() => {
+          setCount(count + 1);
+        }}
+      />
+      <View style={{height:20}}></View>
+       <Button
+        title="Increment Num"
+        onPress={() => {
+          setNum(num + 1);
+        }}
+      />
     </View>
   );
 };
 
-export default App;
+export default MyComponent;
 
 const Styles = StyleSheet.create({
   mainContainer: {flex: 1, padding: 10, justifyContent: 'center'},
